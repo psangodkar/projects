@@ -8,10 +8,12 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
             <a
+            class="btn"
             routerLink="/about"
             >About</a>
         </li>
         <li><a
+          class="btn"
           (click)="onLogout()"
           *ngIf="isAuthenticated()">Logout</a></li>
       </ul>

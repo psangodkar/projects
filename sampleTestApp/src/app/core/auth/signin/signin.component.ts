@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-signin',
@@ -8,9 +11,16 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit() {
   }
 
+  signIn() {
+    if (this.authService.login()) {
+      this.router.navigate(['/dashboard']);
+    }
+  }
 }

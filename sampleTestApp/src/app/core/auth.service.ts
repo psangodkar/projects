@@ -17,7 +17,9 @@ export class AuthService {
         if (this.result.user !== '') {
             this.authenticated = true;
             this.currentUser = this.result.user;
+            return true;
         }
+        return false;
     }
 
     isAuthenticated() {
