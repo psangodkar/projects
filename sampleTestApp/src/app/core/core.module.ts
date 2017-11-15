@@ -9,12 +9,14 @@ import { SharedModule } from '../shared/shared.module';
 
 import { HttpService } from '../http.service';
 import { AuthService } from '../core/auth.service';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
     declarations: [
         HeaderComponent,
         SigninComponent,
-        HomeComponent
+        HomeComponent,
+        AboutComponent
     ],
     imports: [
         AppRoutingModule,
