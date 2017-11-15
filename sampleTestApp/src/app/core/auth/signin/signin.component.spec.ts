@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { By } from '@angular/platform-browser';
 
 import { SigninComponent } from './signin.component';
+import { AuthService } from '../../auth.service';
+import { HttpService } from '../../../http.service';
 
 describe('SigninComponent', () => {
   let component: SigninComponent;
@@ -8,7 +12,14 @@ describe('SigninComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SigninComponent ]
+      declarations: [ SigninComponent ],
+      imports: [
+        RouterTestingModule.withRoutes([])
+      ],
+      providers: [
+        HttpService,
+        AuthService
+      ]
     })
     .compileComponents();
   }));
@@ -19,7 +30,17 @@ describe('SigninComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should have mandatory email field', () => {
+    const de = fixture.debugElement.queryAll(By.css('input'));
+    const el = de[0];
+    const a = el.attributes;
+    expect(a['required']).toBe('');
+  });
+
+  it('should have mandatory password field', () => {
+    const de = fixture.debugElement.queryAll(By.css('input'));
+    const el = de[1];
+    const a = el.attributes;
+    expect(a['required']).toBe('');
   });
 });
