@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -20,12 +21,14 @@ import { AboutComponent } from './about/about.component';
     ],
     imports: [
         AppRoutingModule,
+        FormsModule,
         SharedModule
     ],
     exports: [
         AppRoutingModule,
         HeaderComponent,
-        SigninComponent
+        SigninComponent,
+        FormsModule
     ],
     providers: [AuthService, HttpService]
 })
