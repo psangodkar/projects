@@ -1,4 +1,7 @@
+import { UserService } from './../user.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-user-list',
@@ -8,9 +11,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  items;
+  constructor(private http: HttpClient, private userService: UserService) { }
 
   ngOnInit() {
+    this.http.get('/assets/data.json').subscribe(data => { this.items = data['data']; });
   }
 
 }
+

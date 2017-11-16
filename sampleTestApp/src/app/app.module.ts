@@ -1,25 +1,33 @@
+import { BarChartDemoComponent } from './reports/bar-chart-demo/bar-chart-demo.component';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
+import { ChartModule } from 'primeng/primeng';
 import { AppComponent } from './app.component';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { DashboardComponent } from './user/dashboard/dashboard.component';
-import { UserListComponent } from './user/user-list/user-list.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
+
+
+
+import { DataGridModule } from 'primeng/primeng';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    UserListComponent,
-    UserDetailComponent
+    BarChartDemoComponent
+
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    ChartModule,
+    DataGridModule
   ],
   bootstrap: [AppComponent]
 })
