@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 import { AuthService } from '../../auth.service';
 
@@ -18,9 +19,13 @@ export class SigninComponent implements OnInit {
   ngOnInit() {
   }
 
-  signIn() {
-    if (this.authService.login()) {
-      this.router.navigate(['/dashboard']);
+  signIn(form: NgForm) {
+    console.log('signin called' + form.valid);
+
+    if ( form.valid ) {
+      if (this.authService.login()) {
+        this.router.navigate(['/dashboard']);
+      }
     }
   }
 }
