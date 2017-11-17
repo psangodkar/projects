@@ -1,11 +1,13 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/header/header.component';
 import { AuthService } from './core/auth.service';
 import { HttpService } from '../app/http.service';
+import { UserService } from './user/user.service';
 import { RouterOutlet } from '@angular/router';
 
 
@@ -20,11 +22,13 @@ describe('AppComponent', () => {
         AppComponent
       ],
       imports: [
-        RouterTestingModule.withRoutes([])
+        RouterTestingModule.withRoutes([]),
+        HttpClientModule
       ],
       providers: [
         HttpService,
-        AuthService
+        AuthService,
+        UserService
       ]
     }).compileComponents();
   }));

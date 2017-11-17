@@ -1,8 +1,9 @@
-import { UserService } from './../user.service';
+
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+import { UserService } from './../user.service';
 
 @Component({
   selector: 'app-user-list',

@@ -21,7 +21,7 @@ describe('BarChartDemoComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the bar chart component', () => {
     expect(component).toBeTruthy();
   });
 });

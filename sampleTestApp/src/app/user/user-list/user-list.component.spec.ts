@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { UserListComponent } from './user-list.component';
+import { UserService } from '../user.service';
 
 describe('UserListComponent', () => {
   let component: UserListComponent;
@@ -8,7 +11,12 @@ describe('UserListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserListComponent ]
+      imports: [
+        RouterTestingModule.withRoutes([]),
+        HttpClientModule
+      ],
+      declarations: [ UserListComponent ],
+      providers: [ UserService ]
     })
     .compileComponents();
   }));
@@ -19,7 +27,7 @@ describe('UserListComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create the User list component', () => {
     expect(component).toBeTruthy();
   });
 });

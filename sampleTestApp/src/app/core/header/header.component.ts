@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute, Params, RouterEvent } from '@angular/router';
 
 import { AuthService } from '../auth.service';
 import { UserService } from '../../user/user.service';
-import { RouterEvent } from '@angular/router/src/events';
+
 
 @Component({
   selector: 'app-header',

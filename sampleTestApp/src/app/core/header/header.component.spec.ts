@@ -1,9 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HeaderComponent } from './header.component';
-import { AuthService } from '../auth.service';
+
 import { HttpService } from '../../http.service';
+import { AuthService } from '../auth.service';
+import { UserService } from '../../user/user.service';
+
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -11,10 +16,15 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule.withRoutes([]),
+        HttpClientModule
+      ],
       declarations: [ HeaderComponent ],
       providers: [
         HttpService,
-        AuthService
+        AuthService,
+        UserService
       ]
     })
     .compileComponents();
@@ -31,7 +41,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
 
     const de = fixture.debugElement.queryAll(By.css('.btn'));
-    const el: HTMLElement = de[4].nativeElement;
+    const el: HTMLElement = de[3].nativeElement;
     expect(el.innerText).toBe('Logout');
   });
 

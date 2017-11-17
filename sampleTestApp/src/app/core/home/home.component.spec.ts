@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule, NgForm } from '@angular/forms';
 
 import { HomeComponent } from './home.component';
+import { SigninComponent } from '../auth/signin/signin.component';
+
+import { AuthService } from '../auth.service';
+import { HttpService } from '../../http.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,7 +14,15 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent, SigninComponent ],
+      imports: [
+        FormsModule,
+        RouterTestingModule.withRoutes([])
+      ],
+      providers: [
+        HttpService,
+        AuthService
+      ]
     })
     .compileComponents();
   }));
@@ -19,7 +33,7 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create the home component', () => {
     expect(component).toBeTruthy();
   });
 });
