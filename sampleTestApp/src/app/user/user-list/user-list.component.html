@@ -1,24 +1,12 @@
-<br>
-<p-dataList [value]="items" [paginator]="true" [rows]="5">
-    <p-header>
-        List of Cars
-    </p-header>
-    <ng-template let-car pTemplate="item">
-        <div class="ui-g ui-fluid car-item">
-            <div class="ui-g-12 ui-md-3" style="text-align:center">
-                <i class="fa fa-user usr fa-6" aria-hidden="true"></i>
-            </div>
-            <div class="ui-g-12 ui-md-9 car-details">
-                <div class="ui-g">
-                    <div class="ui-g-2 ui-sm-6">Vin: </div>
-                    <div class="ui-g-10 ui-sm-6">{{car.vin}}</div>
 
-                    <div class="ui-g-2 ui-sm-6">Year: </div>
-                    <div class="ui-g-10 ui-sm-6">{{car.year}}</div>
-
-
-                </div>
-            </div>
+<h3>Employee List</h3>
+<div class="row">
+    <div *ngFor="let item of items" class="card col-xs-3">
+        <img src="assets/{{item.url}}" alt="Avatar" style="width:100%">
+        <span class="glyphicon glyphicon-pencil" *ngIf="doEdit" (click)="editDetails(item)"></span>
+        <div class="container">
+            <h4><b>{{item.fname}} {{item.lname}}</b></h4> 
+            <p>{{item.desig}}</p> 
         </div>
-    </ng-template>
-</p-dataList>
+    </div>
+</div>

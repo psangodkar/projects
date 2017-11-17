@@ -1,20 +1,41 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
-  styleUrls: ['./user-detail.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
 
-  powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
+  @ViewChild('f') editUserForm: NgForm;
 
-  hero = { name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0] };
+  user = { id: 0, fname: 'Mohan', lname: 'Lamba', desig: 'Software Eng', url: 'img_avatar_1.png' };
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute, private userService: UserService) {
+
+    this.user.id = parseInt(this.route.snapshot.params.id, 10);
+    this.user.fname = this.route.snapshot.params.fname;
+    this.user.lname = this.route.snapshot.params.lname;
+    this.user.url = this.route.snapshot.params.url;
+    this.user.desig = this.route.snapshot.params.desig;
+  }
 
   ngOnInit() {
   }
 
+  update(f: NgForm) {
+
+    this.user = { id: this.user.id, fname: f.value.fname, lname: f.value.lname, desig: f.value.desig, url: this.user.url };
+
+    console.log(this.user.lname);
+
+    this.userService.updateUsers(this.user);
+
+    this.router.navigate(['/list']);
+  }
 }

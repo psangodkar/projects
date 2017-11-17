@@ -31,7 +31,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
 
     const de = fixture.debugElement.queryAll(By.css('.btn'));
-    const el: HTMLElement = de[1].nativeElement;
+    const el: HTMLElement = de[4].nativeElement;
     expect(el.innerText).toBe('Logout');
   });
 
@@ -41,7 +41,7 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
 
     const de = fixture.debugElement.queryAll(By.css('.btn'));
-    const el = de[1];
+    const el = de[4];
     expect(el).toBe(undefined);
   });
 });

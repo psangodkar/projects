@@ -22,6 +22,11 @@ export class AuthService {
         return false;
     }
 
+    logout() {
+        this.authenticated = false;
+        this.currentUser = '';
+    }
+
     isAuthenticated() {
         return this.authenticated;
     }

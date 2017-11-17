@@ -20,8 +20,6 @@ export class SigninComponent implements OnInit {
   }
 
   signIn(form: NgForm) {
-    console.log('signin called' + form.valid);
-
     if ( form.valid ) {
       if (this.authService.login()) {
         this.router.navigate(['/dashboard']);

@@ -7,19 +7,19 @@
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="btn" routerLink="/list">List</a>
+                    <a class="btn" (click)="navToList()" *ngIf="isAuthenticated()">List</a>
                 </li>
                 <li>
-                    <a class="btn" routerLink="/edit">Edit</a>
+                    <a class="btn" (click)="editDetails()" *ngIf="isInList()">Edit</a>
                 </li>
                 <li>
-                    <a class="btn" routerLink="/reports">Reports</a>
+                    <a class="btn" routerLink="/reports" *ngIf="isAuthenticated()">Reports</a>
                 </li>
                 <li>
                     <a class="btn" routerLink="/about">About</a>
                 </li>
 
-                <li><a class="btn" (click)="onLogout()" *ngIf="isAuthenticated()">Logout</a></li>
+                <li><a class="btn" (click)="logout()" *ngIf="isAuthenticated()">Logout</a></li>
             </ul>
         </div>
 

@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ChartModule } from 'primeng/primeng';
 
 import { BarChartDemoComponent } from './bar-chart-demo.component';
 
@@ -8,6 +9,7 @@ describe('BarChartDemoComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ ChartModule ],
       declarations: [ BarChartDemoComponent ]
     })
     .compileComponents();

@@ -1,0 +1,52 @@
+{
+    "data": [{
+            "id": 0,
+            "url": "img_avatar_1.png",
+            "desig": "Architect",
+            "fname": "John",
+            "lname": "Joe"
+        },
+        {
+            "id": 1,
+            "url": "img_avatar_2.png",
+            "desig": "Designer",
+            "fname": "Mary",
+            "lname": "Jane"
+        },
+        {
+            "id": 2,
+            "url": "img_avatar_2.png",
+            "desig": "Engineer",
+            "fname": "Jane",
+            "lname": "Hick"
+        },
+        {
+            "id": 3,
+            "url": "img_avatar_2.png",
+            "desig": "MD",
+            "fname": "Jessie",
+            "lname": "Lian"
+        },
+        {
+            "id": 4,
+            "url": "img_avatar_1.png",
+            "desig": "Salesman",
+            "fname": "Patrick",
+            "lname": "Mae"
+        },
+        {
+            "id": 5,
+            "url": "img_avatar_1.png",
+            "desig": "Director",
+            "fname": "Keplin",
+            "lname": "Rohnsley"
+        },
+        {
+            "id": 6,
+            "url": "img_avatar_1.png",
+            "desig": "Marketing",
+            "fname": "Ryan",
+            "lname": "Kick"
+        }
+    ]
+}

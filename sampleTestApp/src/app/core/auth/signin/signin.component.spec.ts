@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
+import { FormsModule, NgForm } from '@angular/forms';
 
 import { SigninComponent } from './signin.component';
 import { AuthService } from '../../auth.service';
@@ -14,6 +15,7 @@ describe('SigninComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ SigninComponent ],
       imports: [
+        FormsModule,
         RouterTestingModule.withRoutes([])
       ],
       providers: [
