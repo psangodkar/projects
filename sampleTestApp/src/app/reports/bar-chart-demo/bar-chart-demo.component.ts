@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { SharedModule } from '../../shared/shared.module';
 
 @Component({
   selector: 'app-bar-chart-demo',

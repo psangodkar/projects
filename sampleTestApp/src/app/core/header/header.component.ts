@@ -33,16 +33,13 @@ export class HeaderComponent implements OnInit {
     }
 
 
-  ngOnInit() {
-    // this.route.params.subscribe((params: Params) => {
-    // });
-  }
+  ngOnInit() { }
 
-  isInList() {
-    if (this.isAuthenticated() && this.curPath === '/list') {
-      return true;
-    }
-  }
+  // isInList() {
+  //   if (this.isAuthenticated() && this.curPath === '/list') {
+  //     return true;
+  //   }
+  // }
 
   isAuthenticated() {
     return this.authService.isAuthenticated();

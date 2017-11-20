@@ -14,7 +14,7 @@ export class UserDetailComponent implements OnInit {
 
   @ViewChild('f') editUserForm: NgForm;
 
-  user = { id: 0, fname: 'Mohan', lname: 'Lamba', desig: 'Software Eng', url: 'img_avatar_1.png' };
+  user = { id: 0, fname: '', lname: '', desig: '', url: '' };
 
   constructor(
     private router: Router,

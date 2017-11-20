@@ -1,9 +1,15 @@
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable()
 
 export class HttpService {
+    constructor(private http: HttpClient) {
+        //
+    }
 
     doGet (url: string) {
-        return true;
+        return this.http.get(url);
     }
 
     doPost (url: string, arg: any) {

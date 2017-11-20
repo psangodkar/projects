@@ -1,13 +1,22 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChartModule } from 'primeng/primeng';
+
+import { BarChartDemoComponent } from '../reports/bar-chart-demo/bar-chart-demo.component';
 
 @NgModule({
+    declarations: [
+        BarChartDemoComponent
+    ],
     imports: [
-        CommonModule
+        CommonModule,
+        ChartModule
     ],
     exports: [
-        CommonModule
+        CommonModule,
+        ChartModule,
+        BarChartDemoComponent
     ]
 })
 
