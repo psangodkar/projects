@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { UserListComponent } from './user-list.component';
 import { UserService } from '../user.service';
+import { HttpService } from '../../http.service';
 
 describe('UserListComponent', () => {
   let component: UserListComponent;
@@ -16,7 +17,7 @@ describe('UserListComponent', () => {
         HttpClientModule
       ],
       declarations: [ UserListComponent ],
-      providers: [ UserService ]
+      providers: [ UserService, HttpService ]
     })
     .compileComponents();
   }));

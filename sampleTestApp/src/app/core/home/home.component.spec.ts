@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule, NgForm } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './home.component';
 import { SigninComponent } from '../auth/signin/signin.component';
@@ -17,6 +18,7 @@ describe('HomeComponent', () => {
       declarations: [ HomeComponent, SigninComponent ],
       imports: [
         FormsModule,
+        HttpClientModule,
         RouterTestingModule.withRoutes([])
       ],
       providers: [

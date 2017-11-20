@@ -2,10 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { By } from '@angular/platform-browser';
 import { FormsModule, NgForm } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SigninComponent } from './signin.component';
 import { AuthService } from '../../auth.service';
 import { HttpService } from '../../../http.service';
+
 
 describe('SigninComponent', () => {
   let component: SigninComponent;
@@ -16,6 +18,7 @@ describe('SigninComponent', () => {
       declarations: [ SigninComponent ],
       imports: [
         FormsModule,
+        HttpClientModule,
         RouterTestingModule.withRoutes([])
       ],
       providers: [

@@ -5,6 +5,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 
 import { UserDetailComponent } from './user-detail.component';
 import { UserService } from '../user.service';
+import { HttpService } from '../../http.service';
 
 describe('UserDetailComponent', () => {
   let component: UserDetailComponent;
@@ -18,7 +19,7 @@ describe('UserDetailComponent', () => {
         FormsModule
       ],
       declarations: [ UserDetailComponent ],
-      providers: [ UserService ]
+      providers: [ UserService, HttpService ]
     })
     .compileComponents();
   }));
