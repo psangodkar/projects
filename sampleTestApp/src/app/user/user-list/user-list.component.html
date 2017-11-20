@@ -3,7 +3,7 @@
 <div class="row">
     <div *ngFor="let item of items" class="card col-xs-3">
         <img src="assets/{{item.url}}" alt="Avatar" style="width:100%">
-        <span class="glyphicon glyphicon-pencil" *ngIf="doEdit" (click)="editDetails(item)"></span>
+        <span class="glyphicon glyphicon-pencil" (click)="editDetails(item)"></span>
         <div class="container">
             <h4><b>{{item.fname}} {{item.lname}}</b></h4> 
             <p>{{item.desig}}</p> 
